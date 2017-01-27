@@ -137,15 +137,9 @@ public class EmailComposer extends CordovaPlugin {
         JSONObject props = args.getJSONObject(0);
         String appId     = props.getString("app");
 
-        if (!(impl.canSendMail(appId, getContext()))[0]) {
-            LOG.i(LOG_TAG, "No client or account found for.");
-            return;
-        }
-
         Intent draft  = impl.getDraftWithProperties(props, getContext());
-        String header = props.optString("chooserHeader", "Open with");
 
-        final Intent chooser = Intent.createChooser(draft, header);
+        final Intent chooser = Intent.createChooser(draft, "Open with");
         final EmailComposer plugin = this;
 
         cordova.getThreadPool().execute(new Runnable() {

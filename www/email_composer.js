@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-email-composer.EmailComposer", function(require, exports, module) {
 /*
     Copyright 2013-2016 appPlant UG
 
@@ -95,9 +96,6 @@ exports.open = function (options, callback, scope) {
     options = this.mergeWithDefaults(options || {});
 
     var onAvailable = function (isPossible, withScheme) {
-
-        if (!isPossible)
-            return fn();
 
         if (!withScheme) {
             if (window.console) { console.log('Cannot open app'); }
@@ -237,3 +235,5 @@ exports.registerCallbackForScheme = function(fn) {
 
     document.addEventListener('resume', callback, false);
 };
+
+});
