@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-email-composer.EmailComposer", function(require, exports, module) {
 /*
     Copyright 2013-2016 appPlant UG
 
@@ -235,5 +234,3 @@ exports.registerCallbackForScheme = function(fn) {
 
     document.addEventListener('resume', callback, false);
 };
-
-});
